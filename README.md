@@ -60,10 +60,9 @@ Two Jupyter Notebooks are provided to demonstrate the complete end-to-end flow:
 
 ### watsonx.data
 
-(./docs/watsonx-data-integration.md)
-
+The watsonx.data [example](./docs/watsonx-data-integration.md) provides a quick view of what it takes to connect a database to watsonx.data and then to connect the its Presto query engine to Watson Studio as a data souce. As an added treat, Watson Studio's visualzation capabilities are explored.
 
 
 ### watsonx.governance
 
-(./docs/watsonx-data-governance.md)
+The watsonx.governance [example](./docs/watsonx-governance-integration.md) shows configuring Watson OpenScale governance to monitor the quality and fairness of an HR model that predicts if an employee will be promoted soon. 
