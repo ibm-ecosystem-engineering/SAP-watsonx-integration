@@ -1,13 +1,15 @@
-# Integrating watsonx with SAP AI Core and Datasphere
+# watsonx Integration with SAP AI Core and SAP Datasphere
 
 ## Introduction
 This repo demonstrates different ways watsonx.ai, watsonx.data, and watsonx.governance can be used with SAP's AI Core and Datasphere for AI model training, deployment, and governance monitoring. 
 
-The [SAP AI Core](https://help.sap.com/docs/sap-ai-core) service in the [SAP Business Technology Platform (BTP)](https://help.sap.com/docs/btp) handles the execution and operations of your AI assets in a standardized, scalable, and hyperscaler-agnostic way.
 
+## watsonx with SAP DataSphere
 [SAP Datasphere](https://help.sap.com/docs/SAP_DATASPHERE) provides a business data fabric infrastructure that can work across an organization to bring together mission-critical data. SAP Datasphere allows you to converge data coming from SAP and third-party on-premise and cloud environments into a single, fully-managed cloud environment.
  
 ## watsonx with SAP AI Core
+The [SAP AI Core](https://help.sap.com/docs/sap-ai-core) service in the [SAP Business Technology Platform (BTP)](https://help.sap.com/docs/btp) handles the execution and operations of your AI assets in a standardized, scalable, and hyperscaler-agnostic way.
+
 watsonx provides powerful tools that can be used each step of an AI model's lifecycle.
 
 This architecture diagram will be used in our lifecycle discussion.
@@ -42,11 +44,14 @@ After the model has been configured for monitoring, invoking the model causes it
 ### Model in Production
 With the model and governance in place, it can now be invoked by an application to score data (path #10).
 
-
 Prior to model training a data scientists wants to explore the data to get a feel for relationships between 
 
-## Examples
+## Model Templates
 The end-to-end lifecycle has been broken into smaller examples that focus on one of the watsonx products.
+
+### watsonx.data
+
+The watsonx.data [example](./docs/watsonx-data-integration.md) provides a quick view of what it takes to connect a database to watsonx.data and then to connect the its Presto query engine to Watson Studio as a data souce. As an added treat, Watson Studio's visualzation capabilities are explored.
 
 ### watsonx.ai
 This example demonstrates [IBM watsonx](https://www.ibm.com/watsonx) retrieving training data from SAP Datasphere, training a model in Watson Studio, and then deploying the model to SAP AI Core.
@@ -58,9 +63,6 @@ Two Jupyter Notebooks are provided to demonstrate the complete end-to-end flow:
 1. [Train a classification model for MSDS in IBM Watson Studio](notebooks/Train-Model-with-Data-from-SAP-Datasphere.ipynb)
 1. [Deploy the custom-trained model to SAP AI Core](notebooks/Deploy-Custom-Model-to-SAP-AI-Core.ipynb)
 
-### watsonx.data
-
-The watsonx.data [example](./docs/watsonx-data-integration.md) provides a quick view of what it takes to connect a database to watsonx.data and then to connect the its Presto query engine to Watson Studio as a data souce. As an added treat, Watson Studio's visualzation capabilities are explored.
 
 
 ### watsonx.governance
