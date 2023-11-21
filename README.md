@@ -52,7 +52,7 @@ The end-to-end lifecycle has been broken into smaller examples that focus on one
 ### 1. watsonx.ai
 This example demonstrates watsonx retrieving training data from SAP Datasphere, training a model in Watson Studio, and then deploying the model to SAP AI Core.
 
-The model trained in this example is a Watson NLP text classification model that predicts the recommended emergency handling protocols for different types of hazards materials based on information found in the bill of lading. Details on the use case can be found [here](./docs/watsonx-ai.md)
+The model trained in this example is a Watson NLP text classification model that predicts the recommended emergency handling protocols for different types of hazards materials based on information found in the bill of lading. Details on the use case can be found [here](./1.%20watsonx.ai/README.md)
 
 Two Jupyter Notebooks are provided to demonstrate the complete end-to-end flow:
 
