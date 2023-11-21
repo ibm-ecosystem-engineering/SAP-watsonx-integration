@@ -3,7 +3,7 @@
 ## Introduction
 This repo demonstrates different ways watsonx can be used with SAP's AI Core and Datasphere for AI model training, deployment, and governance monitoring. 
 
-### SAP DataSphere
+### SAP Datasphere
 [SAP Datasphere](https://help.sap.com/docs/SAP_DATASPHERE) provides a business data fabric infrastructure that can work across an organization to bring together mission-critical data. SAP Datasphere allows you to converge data coming from SAP and third-party on-premise and cloud environments into a single, fully-managed cloud environment.
  
 ### SAP AI Core
