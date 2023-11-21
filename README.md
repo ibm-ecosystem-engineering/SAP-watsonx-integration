@@ -66,3 +66,11 @@ The watsonx.data [example](./2.%20watsonx.data/README.md) provides a quick view 
 ### 3. watsonx.governance
 
 The watsonx.governance [example](./3.%20watsonx.governance/README.md) shows configuring Watson OpenScale governance to monitor the quality and fairness of an HR model that predicts if an employee will be promoted soon. 
+
+=================================================
+
+### Disclaimer
+
+This framework is developed by Build Lab, IBM Ecosystem. Please note that this content is made available to foster Embeddable AI technology adoption and serve ecosystem partners. The content may include systems & methods pending patent with the USPTO and protected under US Patent Laws. SuperKnowa is not a product but a framework built on the top of IBM watsonx along with other products like LLAMA models from Meta & ML Flow from Databricks. Using SuperKnowa implicitly requires agreeing to the Terms and conditions of those products. This framework is made available on an as-is basis to accelerate Enterprise GenAI applications development. In case of any questions, please reach out to kunal@ibm.com.
+
+Copyright @ 2023 IBM Corporation.
