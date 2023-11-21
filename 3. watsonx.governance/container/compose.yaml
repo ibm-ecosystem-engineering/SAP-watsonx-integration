@@ -1,0 +1,15 @@
+services:
+  epp-local-test:
+    image: epp-local-test:latest
+    build:
+      context: .
+    container_name: epp-local-test
+    hostname: epp-local-test
+    env_file: .env
+    command: ["python", "auto.py"]
+    ports:
+      - "8000:7000"
+
+networks:
+  default:
+
