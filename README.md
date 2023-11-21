@@ -46,6 +46,8 @@ With the model and governance in place, it can now be invoked by an application 
 
 Prior to model training a data scientists wants to explore the data to get a feel for relationships between 
 
+==========================================================================
+
 ## Model Templates
 The end-to-end lifecycle has been broken into smaller examples that focus on one of the watsonx products.
 
