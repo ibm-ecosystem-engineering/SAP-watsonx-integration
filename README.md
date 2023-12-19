@@ -14,14 +14,11 @@ The [SAP AI Core](https://help.sap.com/docs/sap-ai-core) service in the [SAP Bus
 
 This architecture diagram will be used in our integration discussion.
 
-![End to End flow](./images/end-to-end-flow.png)
+![End to End ML Lifecycle](./images/end-to-end-flow.png)
 
 #### Data Ingestion
 Gathering model training data often requires retrieving and joining data from multiple data sources. While this can be done directly in a notebook, this approach may not scale for large datasets or when data security limits data visibility. The watsonx.data tutorial explores ways to retrieve and join data from multiple databases using watsonx.data.
 
-Path #1 - connecting SAP Datasphere to watsonx.data. This is not yet working, but we are investigating using SAP's custom JDBC driver with watsonx.data.
-
-Path #2 and #3 - connecting multiple databases (DB2 and Netezza in the diagram) and using a federated query to join data (path #4) from multiple tables.
 
 #### Data Exploration
 The watsonx.ai Studio provides Jupyter notebook environments that can be used for data exploration. Studio also provides a visualization environment with a large selection of graph types to explore all aspects of your data.
@@ -44,17 +41,17 @@ After the model has been configured for monitoring, invoking the model causes it
 #### Model in Production
 With the model and governance in place, it can now be invoked by an application to score data (path #10).
 
-Prior to model training a data scientists wants to explore the data to get a feel for relationships between 
+Prior to model training a data scientist wants to explore the data to get a feel for relationships between 
 
 ==========================================================================
 
-## Model Templates
+## Notebooks
 The end-to-end lifecycle has been broken into smaller examples that focus on one of the watsonx products.
 
 ### 1. watsonx.ai
 This example demonstrates watsonx retrieving training data from SAP Datasphere, training a model in Watson Studio, and then deploying the model to SAP AI Core.
 
-The model trained in this example is a Watson NLP text classification model that predicts the recommended emergency handling protocols for different types of hazards materials based on information found in the bill of lading. Details on the use case can be found [here](./1.%20watsonx.ai/README.md)
+The model trained in this example is a Watson NLP text classification model that predicts the recommended emergency handling protocols for different types of hazardous materials based on information found in the bill of lading. Details on the use case can be found [here](./1.%20watsonx.ai/README.md)
 
 Two Jupyter Notebooks are provided to demonstrate the complete end-to-end flow:
 
