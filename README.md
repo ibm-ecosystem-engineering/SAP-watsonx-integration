@@ -19,7 +19,6 @@ This architecture diagram will be used in our integration discussion.
 #### Data Ingestion
 Gathering model training data often requires retrieving and joining data from multiple data sources. While this can be done directly in a notebook, this approach may not scale for large datasets or when data security limits data visibility. The watsonx.data tutorial explores ways to retrieve and join data from multiple databases using watsonx.data.
 
-
 #### Data Exploration
 The watsonx.ai Studio provides Jupyter notebook environments that can be used for data exploration. Studio also provides a visualization environment with a large selection of graph types to explore all aspects of your data.
 
@@ -41,8 +40,6 @@ After the model has been configured for monitoring, invoking the model causes it
 #### Model in Production
 With the model and governance in place, it can now be invoked by an application to score data (path #10).
 
-Prior to model training a data scientist wants to explore the data to get a feel for relationships between 
-
 ==========================================================================
 
 ## 1. watsonx.ai
@@ -51,7 +48,7 @@ Prior to model training a data scientist wants to explore the data to get a feel
 
 This example demonstrates watsonx retrieving training data from SAP Datasphere, training a model in Watson Studio, and then deploying the model to SAP AI Core.
 
-The model trained in this example is a Watson NLP text classification model that predicts the recommended emergency handling protocols for different types of hazardous materials based on information found in the bill of lading. Details on the use case can be found [here](./1.%20watsonx.ai/1.1%20Supply%20Chain%20Use%20Case/README.md)
+The model trained in this example is a Watson NLP text classification model that predicts the recommended emergency handling protocols for different types of hazardous materials based on information found in the bill of lading. Details on the use case can be found [here](./1.%20watsonx.ai/1.1%20Supply%20Chain%20Use%20Case/README.md).
 
 Two Jupyter Notebooks are provided to demonstrate the complete end-to-end flow:
 
@@ -79,10 +76,3 @@ The watsonx.data [example](2.%20watsonx.data/2.1%20HR%20Use%20Case/README.md) pr
 
 The watsonx.governance [example](3.%20watsonx.governance/3.1%20HR%20Use%20Case/README.md) shows configuring Watson OpenScale governance to monitor the quality and fairness of an HR model that predicts if an employee will be promoted soon. 
 
-=================================================
-
-### Disclaimer
-
-This framework is developed by Build Lab, IBM Ecosystem. Please note that this content is made available to foster Embeddable AI technology adoption and serve ecosystem partners. The content may include systems & methods pending patent with the USPTO and protected under US Patent Laws. SuperKnowa is not a product but a framework built on the top of IBM watsonx along with other products like LLAMA models from Meta & ML Flow from Databricks. Using SuperKnowa implicitly requires agreeing to the Terms and conditions of those products. This framework is made available on an as-is basis to accelerate Enterprise GenAI applications development. In case of any questions, please reach out to kunal@ibm.com.
-
-Copyright @ 2023 IBM Corporation.
