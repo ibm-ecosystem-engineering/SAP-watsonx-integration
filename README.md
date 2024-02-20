@@ -65,7 +65,7 @@ In this example, we train a Random Forest Classification model in Watson Studio 
 More details on the use case can be found in the following notebooks:
 
 1. [train-epp-model.ipynb](1.%20watsonx.ai/1.1%20HR20Use%20Case/notebooks/train-epp-model.ipynb)
-1. [Deploy the custom-trained model to SAP AI Core](1.%20watsonx.ai/1.1%20HR%20Use%20Case/notebooks/deploy-epp-model.ipynb)
+1. [deploy-epp-model.ipynb](1.%20watsonx.ai/1.1%20HR%20Use%20Case/notebooks/deploy-epp-model.ipynb)
 
 ==========================================================================
 
