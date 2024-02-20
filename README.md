@@ -45,30 +45,39 @@ Prior to model training a data scientist wants to explore the data to get a feel
 
 ==========================================================================
 
-# Notebooks
-The end-to-end lifecycle has been broken into smaller examples that focus on one of the watsonx products.
-
 ## 1. watsonx.ai
+
+### 1.1 Supply Chain Use Case
+
 This example demonstrates watsonx retrieving training data from SAP Datasphere, training a model in Watson Studio, and then deploying the model to SAP AI Core.
 
-The model trained in this example is a Watson NLP text classification model that predicts the recommended emergency handling protocols for different types of hazardous materials based on information found in the bill of lading. Details on the use case can be found [here](./1.%20watsonx.ai/README.md)
+The model trained in this example is a Watson NLP text classification model that predicts the recommended emergency handling protocols for different types of hazardous materials based on information found in the bill of lading. Details on the use case can be found [here](./1.%20watsonx.ai/1.1%20Supply%20Chain%20Use%20Case/README.md)
 
 Two Jupyter Notebooks are provided to demonstrate the complete end-to-end flow:
 
-1. [Train a classification model for MSDS in IBM Watson Studio](1.%20watsonx.ai/notebooks/Train-Model-with-Data-from-SAP-Datasphere.ipynb)
-1. [Deploy the custom-trained model to SAP AI Core](1.%20watsonx.ai/notebooks/Deploy-Custom-Model-to-SAP-AI-Core.ipynb)
+1. [Train a classification model for MSDS in IBM Watson Studio](1.%20watsonx.ai/1.1%20Supply%20Chain%20Use%20Case/notebooks/Train-Model-with-Data-from-SAP-Datasphere.ipynb)
+1. [Deploy the custom-trained model to SAP AI Core](1.%20watsonx.ai/1.1%20Supply%20Chain%20Use%20Case/notebooks/Deploy-Custom-Model-to-SAP-AI-Core.ipynb)
 
-==============
+### 1.2 HR Use Case
+
+In this example, we train a Random Forest Classification model in Watson Studio for predicting employee promotions, build a container image for model deployment, and then deploy the model to SAP AI Core.
+
+More details on the use case can be found in the following notebooks:
+
+1. [train-epp-model.ipynb](1.%20watsonx.ai/1.1%20HR20Use%20Case/notebooks/train-epp-model.ipynb)
+1. [Deploy the custom-trained model to SAP AI Core](1.%20watsonx.ai/1.1%20HR%20Use%20Case/notebooks/deploy-epp-model.ipynb)
+
+==========================================================================
 
 ## 2. watsonx.data
 
-The watsonx.data [example](./2.%20watsonx.data/README.md) provides a quick view of what it takes to connect a database to watsonx.data and then to connect the its Presto query engine to Watson Studio as a data souce. As an added treat, Watson Studio's visualzation capabilities are explored.
+The watsonx.data [example](2.%20watsonx.data/2.1%20HR%20Use%20Case/README.md) provides a quick view of what it takes to connect a database to watsonx.data and then to connect its Presto query engine to Watson Studio as a data souce. As an added treat, Watson Studio's visualzation capabilities are explored.
 
-================
+==========================================================================
 
 ## 3. watsonx.governance
 
-The watsonx.governance [example](./3.%20watsonx.governance/README.md) shows configuring Watson OpenScale governance to monitor the quality and fairness of an HR model that predicts if an employee will be promoted soon. 
+The watsonx.governance [example](3.%20watsonx.governance/3.1%20HR%20Use%20Case/README.md) shows configuring Watson OpenScale governance to monitor the quality and fairness of an HR model that predicts if an employee will be promoted soon. 
 
 =================================================
 
