@@ -1,0 +1,46 @@
+{
+    "input_data": [
+        {
+            "fields": [
+                "no_of_trainings",
+                "age",
+                "previous_year_rating",
+                "length_of_service",
+                "kpis_met_above_80_percent",
+                "any_awards_won", "avg_training_score",
+                "department_Finance",
+                "department_HR", "department_Legal",
+                "department_Operations", "department_Procurement",
+                "department_R&D", "department_Sales & Marketing",
+                "department_Technology",
+                "education_Bachelor's",
+                "education_Below Secondary",
+                "education_Master's & above",
+                "gender_m"
+            ],
+            "values": [
+                [
+                    1,
+                    33,
+                    3,
+                    6,
+                    0,
+                    0,
+                    63,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                ]
+            ]
+        }
+    ]
+}
