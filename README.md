@@ -76,3 +76,12 @@ The watsonx.data [example](2.%20watsonx.data/2.1%20HR%20Use%20Case/README.md) pr
 
 The watsonx.governance [example](3.%20watsonx.governance/3.1%20HR%20Use%20Case/README.md) shows configuring Watson OpenScale governance to monitor the quality and fairness of an HR model that predicts if an employee will be promoted soon. 
 
+==========================================================================
+
+## 4. SAP FedML
+
+The SAP FedML [example](4.%20SAP%20FedML/4.1%20HR%20Use%20Case/README.md) demonstrates a new approach with SAP Federated ML Python libraries (FedML) for an end-to-end workflow in the employee promotions prediction use case, in which you train a classification model with data from SAP Datasphere, deploy the model to SAP AI Core, and use it for online inference.
+
+More details on the use case can be found in the following notebook:
+
+1. [epp-end-to-end-with-fedml.ipynb](4.%20SAP%20FedML/4.1%20HR%20Use%20Case/notebooks/epp-end-to-end-with-fedml.ipynb)
