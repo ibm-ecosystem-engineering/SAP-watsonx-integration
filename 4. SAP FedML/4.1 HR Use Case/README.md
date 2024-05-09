@@ -7,4 +7,4 @@ This example demonstrates:
 3. Making inference calls using FedML
 
 
-![data-figure](../../images/watsonx-fedml.jpeg)
+![data-figure](../../images/watsonx-fedml.png)
