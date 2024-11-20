@@ -8,4 +8,4 @@ This example demonstrates:
 5. Running a Streamlit chat application to interact with the deployed service
 
 
-![data-figure](../../images/qna_rag.jpg)
+![data-figure](../../images/qna_rag.png)
