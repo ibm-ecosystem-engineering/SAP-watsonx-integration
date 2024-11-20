@@ -1,87 +1,102 @@
-# Document indexing to SAP Hana Vector database
+# Document Indexing to SAP HANA Vector Database  
 
-The instruction demonstrate the document indexing to SAP hana vector database.
+This guide demonstrates the process of indexing documents in the SAP HANA vector database. Follow the steps below to set up the application and get started.  
 
-## Components
+---
 
-- Document to index
-- Cloud Object Storage to store the documents for indexing
-- Embedding model ( We are suing adda model here)
-- Hana db instance
+## Overview  
 
-## Run the application locally
+### Key Components  
+- **Documents for Indexing**: A collection of files (e.g., DOCX, PDF, HTML) to be indexed.  
+- **Cloud Object Storage (COS)**: Stores documents prior to indexing.  
+- **Embedding Model**: Used for vectorizing documents (e.g., the ADDA model).  
+- **HANA Database Instance**: Hosts the indexed data for efficient retrieval.  
 
-### Create environment
+---
 
-```sh
-python3 -m venv backend
-```
+## Running the Application Locally  
 
-```sh
-source backend/bin/activate
-```
+### Step 1: Set Up the Environment  
 
-### Install requirement
+Create a virtual environment to isolate dependencies.  
 
-```sh
-pip3 install -r requirements.txt
-```
+```bash
+python3 -m venv backend  
+source backend/bin/activate  
+```  
 
-### Run the server
+### Step 2: Install Dependencies  
 
-Create a `.env` file and fill up the below variables to make the application running.
+Install the required Python packages using the provided `requirements.txt` file.  
 
-```sh
-cp env .env
-```
+```bash
+pip3 install -r requirements.txt  
+```  
 
-```sh
-## AICORE configuration data
-AICORE_AUTH_URL="https://***.authentication.***.hana.ondemand.com"
-AICORE_CLIENT_ID="sb-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx!xxxxxxx|aicore!xxxx"
-AICORE_CLIENT_SECRET="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx$***"
-AICORE_RESOURCE_GROUP="***"
-AICORE_BASE_URL="https://api.ai.***.hana.ondemand.com"
+### Step 3: Configure Environment Variables  
 
-## Hana db credentials
-HANA_DB_HOST="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.***.***.hanacloud.ondemand.com"
-HANA_DB_USER="***"
-HANA_DB_PASSWORD="***"
+Create a `.env` file and populate it with the necessary credentials and configurations. Use the provided `env` template as a reference.  
 
-HANA_DB_TABLE_NAME="***"
+```bash
+cp env .env  
+```  
 
-## AWS COS credentials
-AWS_ACCESS_KEY_ID="***"
-AWS_SECRET_ACCESS_KEY="***"
-AWS_DEFAULT_REGION="***"
-AWS_BUCKET="***"
-AWS_DOC_PATH_PREFIX="***"
-```
+#### Example `.env` Variables  
 
-### Run the application
+```dotenv  
+## AI Core Configuration  
+AICORE_AUTH_URL="https://***.authentication.***.hana.ondemand.com"  
+AICORE_CLIENT_ID="sb-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx!xxxxxxx|aicore!xxxx"  
+AICORE_CLIENT_SECRET="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx$***"  
+AICORE_RESOURCE_GROUP="***"  
+AICORE_BASE_URL="https://api.ai.***.hana.ondemand.com"  
 
-```sh
-python3 main.py
-```
+## HANA Database Credentials  
+HANA_DB_HOST="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.***.***.hanacloud.ondemand.com"  
+HANA_DB_USER="***"  
+HANA_DB_PASSWORD="***"  
+HANA_DB_TABLE_NAME="***"  
 
-## Docker container
+## AWS Cloud Object Storage  
+AWS_ACCESS_KEY_ID="***"  
+AWS_SECRET_ACCESS_KEY="***"  
+AWS_DEFAULT_REGION="***"  
+AWS_BUCKET="***"  
+AWS_DOC_PATH_PREFIX="***"  
+```  
 
-### Build
+### Step 4: Start the Application  
 
-```sh
-docker build -t <DOCKER_REGISTRY>/<NAME_SPACE>:<TAG> .
-```
+Run the application server.  
 
-### Publish
+```bash  
+python3 main.py  
+```  
 
-```sh
-docker push <DOCKER_REGISTRY>/<NAME_SPACE>:<TAG>
-```
+---
 
-### Run
+## Running with Docker  
 
-Before you run the container please fillup all the required environment variables in the file `env` provided with the code.
+### Step 1: Build the Docker Image  
 
-```sh
-podman run --rm --env-file ./env <DOCKER_REGISTRY>/<NAME_SPACE>:<TAG>
-```
+Build a Docker image using the provided `Dockerfile`.  
+
+```bash  
+docker build -t <DOCKER_REGISTRY>/<NAMESPACE>:<TAG> .  
+```  
+
+### Step 2: Publish the Docker Image  
+
+Push the Docker image to your container registry.  
+
+```bash  
+docker push <DOCKER_REGISTRY>/<NAMESPACE>:<TAG>  
+```  
+
+### Step 3: Run the Docker Container  
+
+Ensure all environment variables are defined in the `env` file before running the container.  
+
+```bash  
+podman run --rm --env-file ./env <DOCKER_REGISTRY>/<NAMESPACE>:<TAG>  
+```  
