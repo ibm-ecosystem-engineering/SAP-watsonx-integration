@@ -1,68 +1,103 @@
-# SAP Q&A RAG Pipeline
+# SAP Q&A RAG Pipeline  
 
-This application is an SAP Q&A RAG Pipeline that uses the following components and workflow to generate LLM responses:
+This application implements a **SAP Q&A Retrieval-Augmented Generation (RAG) Pipeline**, integrating advanced components to deliver accurate responses using a Large Language Model (LLM).  
 
-- **Embedding Model**: Generates an embedding for the query.
-- **SAP HANA Vector DB**: Performs a semantic query to retrieve relevant documents from the HANA Vector database, building the context.
-- **Prompt Construction**: Uses the retrieved context to build a prompt for the LLM.
-- **LLM (Granite Model)**: Generates a response based on the provided prompt.
+---
 
-## Run the application locally
+## Workflow Overview  
 
-### Create environment
+1. **Embedding Model**:  
+   - Encodes the query into a vector representation for semantic matching.  
 
-```sh
-python3 -m venv backend
-```
+2. **SAP HANA Vector Database**:  
+   - Executes a semantic search to retrieve relevant documents, constructing a context for the query.  
 
-```sh
-source backend/bin/activate
-```
+3. **Prompt Construction**:  
+   - Combines the retrieved context with the query to create a prompt for the LLM.  
 
-### Install requirement
+4. **LLM (Granite Model)**:  
+   - Generates the final response based on the constructed prompt.  
 
-```sh
-pip3 install -r requirements.txt
-```
+---
 
-### Run the server
+## Running the Application Locally  
 
-Create a `.env` file and fill up the below variables to make the application running.
+Follow these steps to set up and run the application on your local machine.  
 
-```sh
-## AICORE configuration data
-AICORE_AUTH_URL=""
-AICORE_CLIENT_ID=""
-AICORE_CLIENT_SECRET=""
-AICORE_RESOURCE_GROUP=""
-AICORE_BASE_URL=""
-ORC_API_URL=""
+### Step 1: Set Up the Python Environment  
 
-## Hana db credentials
-HANA_DB_HOST=""
-HANA_DB_USER=""
-HANA_DB_PASSWORD=""
-HANA_DB_TABLE_NAME=""
-```
+Create and activate a virtual environment to manage dependencies:  
 
-### Run the application
+```bash  
+python3 -m venv backend  
+source backend/bin/activate  
+```  
 
-```sh
-python3 main.py
-```
+### Step 2: Install Dependencies  
 
-## Docker container
+Install the required Python packages:  
 
-### Build
+```bash  
+pip3 install -r requirements.txt  
+```  
 
-```sh
-docker build -t <DOCKER_REGISTRY>/<NAME_SPACE>:<TAG> .
-```
+### Step 3: Configure Environment Variables  
 
-### Publish
+Create a `.env` file and populate it with the necessary credentials and configurations:  
 
-```sh
-docker push <DOCKER_REGISTRY>/<NAME_SPACE>:<TAG>
-```
+```bash  
+## AI Core Configuration  
+AICORE_AUTH_URL=""  
+AICORE_CLIENT_ID=""  
+AICORE_CLIENT_SECRET=""  
+AICORE_RESOURCE_GROUP=""  
+AICORE_BASE_URL=""  
+ORC_API_URL=""  
 
-Take a note of the docker container you push to your repo. it will be needed in the SAP-AI Core workflow to serve the application.
+## HANA Database Configuration  
+HANA_DB_HOST=""  
+HANA_DB_USER=""  
+HANA_DB_PASSWORD=""  
+HANA_DB_TABLE_NAME=""  
+```  
+
+### Step 4: Run the Application  
+
+Start the application server:  
+
+```bash  
+python3 main.py  
+```  
+
+---
+
+## Using Docker  
+
+### Step 1: Build the Docker Image  
+
+Build the Docker image using the provided `Dockerfile`:  
+
+```bash  
+docker build -t <DOCKER_REGISTRY>/<NAMESPACE>:<TAG> .  
+```  
+
+### Step 2: Publish the Docker Image  
+
+Push the built image to your container registry:  
+
+```bash  
+docker push <DOCKER_REGISTRY>/<NAMESPACE>:<TAG>  
+```  
+
+> **Note**: Save the container image details for use in the SAP AI Core workflow to deploy and serve the application.  
+
+---
+
+## Next Steps  
+
+- **Integration with SAP AI Core**:  
+  - Use the published Docker container in SAP AI Core workflows to enable seamless deployment and inference.  
+- **Customization**:  
+  - Extend the pipeline by integrating additional models, enhancing prompt construction, or fine-tuning the Granite model.  
+
+Harness the power of semantic search and LLMs to build smarter and more efficient Q&A solutions with SAP's Q&A RAG Pipeline! 🚀
