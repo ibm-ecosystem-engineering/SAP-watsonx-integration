@@ -1,0 +1,86 @@
+# SAP AI-CORE Serving template
+
+This repository provides a sample serving template we used in our Q&A RAG use case.
+
+```yaml
+apiVersion: ai.sap.com/v1alpha1
+kind: ServingTemplate
+metadata:
+  name: sap-ai-core-rag-pipeline
+  annotations:
+    scenarios.ai.sap.com/description: "End to end complete RAG Pipeline, from retriever, building prompt, generation"
+    scenarios.ai.sap.com/name: "Complete RAG Pipeline in SAP AI-CORE"
+    executables.ai.sap.com/description: "Complete RAG Pipeline in SAP AI-CORE executable"
+    executables.ai.sap.com/name: "sap-aicore-rag-pipeline-executable-id"
+  labels:
+    scenarios.ai.sap.com/id: "sap-aicore-rag-pipeline-scenario-id"
+    ai.sap.com/version: "1.0.5-20241112-v1"
+spec:
+  inputs:
+    parameters:
+      - name: AICORE_AUTH_URL
+        type: string
+      - name: AICORE_CLIENT_ID
+        type: string
+      - name: AICORE_CLIENT_SECRET
+        type: string
+      - name: AICORE_RESOURCE_GROUP
+        type: string
+      - name: AICORE_BASE_URL
+        type: string
+      - name: ORC_API_URL
+        type: string
+      - name: HANA_DB_HOST
+        type: string
+      - name: HANA_DB_USER
+        type: string
+      - name: HANA_DB_PASSWORD
+        type: string
+      - name: HANA_DB_TABLE_NAME
+        type: string
+      - name: LLM_REST_API_KEY
+        type: string
+  template:
+    apiVersion: "serving.kserve.io/v1beta1"
+    metadata:
+      annotations: |
+        autoscaling.knative.dev/metric: concurrency
+        autoscaling.knative.dev/target: 1
+        autoscaling.knative.dev/targetBurstCapacity: 0
+      labels: |
+        ai.sap.com/resourcePlan: starter
+    spec: |
+      predictor:
+        minReplicas: 1
+        maxReplicas: 5
+        containers:
+        - name: kserve-container
+          image: docker.io/himadrica/sap-rag-pipeline:20241112-v1
+          command: ["python3", "main.py"]
+          ports:
+            - containerPort: 3001
+              protocol: TCP
+          env:
+            - name: AICORE_AUTH_URL
+              value: "{{inputs.parameters.AICORE_AUTH_URL}}"
+            - name: AICORE_CLIENT_ID
+              value: "{{inputs.parameters.AICORE_CLIENT_ID}}"
+            - name: AICORE_CLIENT_SECRET
+              value: "{{inputs.parameters.AICORE_CLIENT_SECRET}}"
+            - name: AICORE_RESOURCE_GROUP
+              value: "{{inputs.parameters.AICORE_RESOURCE_GROUP}}"
+            - name: AICORE_BASE_URL
+              value: "{{inputs.parameters.AICORE_BASE_URL}}"
+            - name: ORC_API_URL
+              value: "{{inputs.parameters.ORC_API_URL}}"
+            - name: HANA_DB_HOST
+              value: "{{inputs.parameters.HANA_DB_HOST}}"
+            - name: HANA_DB_USER
+              value: "{{inputs.parameters.HANA_DB_USER}}"
+            - name: HANA_DB_PASSWORD
+              value: "{{inputs.parameters.HANA_DB_PASSWORD}}"
+            - name: HANA_DB_TABLE_NAME
+              value: "{{inputs.parameters.HANA_DB_TABLE_NAME}}"
+            - name: LLM_REST_API_KEY
+              value: "{{inputs.parameters.LLM_REST_API_KEY}}"
+```

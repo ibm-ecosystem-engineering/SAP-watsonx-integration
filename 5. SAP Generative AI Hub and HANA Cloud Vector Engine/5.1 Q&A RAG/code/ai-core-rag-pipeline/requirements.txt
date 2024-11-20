@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+langchain
+openai
+docarray
+panel
+jupyter_bokeh
+redlines
+tiktoken
+wikipedia
+DateTime
+presidio_anonymizer
+hana-ml
+hdbcli
+presidio_analyzer
+generative-ai-hub-sdk[all]
+python-dotenv

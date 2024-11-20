@@ -1,0 +1,14 @@
+AICORE_AUTH_URL=https://***.authentication.***.hana.ondemand.com/oauth/token
+AICORE_CLIENT_ID=sb-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx!xxxxxxx|aicore!xxxx
+AICORE_CLIENT_SECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx$***
+AICORE_RESOURCE_GROUP=***
+AICORE_BASE_URL=https://api.ai.***.hana.ondemand.com/v2
+HANA_DB_HOST=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.***.***.hanacloud.ondemand.com
+HANA_DB_USER=***
+HANA_DB_PASSWORD=***
+HANA_DB_TABLE_NAME=***
+AWS_ACCESS_KEY_ID=***
+AWS_SECRET_ACCESS_KEY=***
+AWS_DEFAULT_REGION=eu-central-1
+AWS_BUCKET=hcp-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+AWS_DOC_PATH_PREFIX=***
