@@ -1,0 +1,14 @@
+# Example .env file
+#   - The environment variables are set with detail information of 2 components:
+#     1. The AI Core instance on which the IBM Granite model and the embedding model are deployed
+#     2. The HANA Cloud instance
+AICORE_AUTH_URL=https://***.authentication.***.hana.ondemand.com
+AICORE_CLIENT_ID=sb-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx!xxxxxxx|aicore!xxxx
+AICORE_CLIENT_SECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx$***
+AICORE_RESOURCE_GROUP=***
+AICORE_BASE_URL=https://api.ai.***.hana.ondemand.com/v2
+ORC_API_URL=https://api.ai.***.hana.ondemand.com/v2/inference/deployments/***
+HANA_DB_HOST=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.***.***.hanacloud.ondemand.com
+HANA_DB_USER=***
+HANA_DB_PASSWORD=***
+HANA_DB_TABLE_NAME=***

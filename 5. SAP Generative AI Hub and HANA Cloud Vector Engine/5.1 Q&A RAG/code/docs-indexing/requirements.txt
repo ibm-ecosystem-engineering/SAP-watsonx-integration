@@ -1,0 +1,10 @@
+boto3
+unstructured
+langchain
+tiktoken
+pypdf
+hana-ml
+hdbcli
+langchain-community
+generative-ai-hub-sdk
+python-dotenv

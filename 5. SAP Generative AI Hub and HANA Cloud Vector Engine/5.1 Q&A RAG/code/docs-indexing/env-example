@@ -1,0 +1,20 @@
+# Example .env file
+#   - The environment variables are set with detail information of 3 components:
+#     1. The AI Core instance on which the embedding model is deployed
+#     2. The HANA Cloud instance
+#     3. The Object Store instance (AWS S3 bucket)
+#   - The "default" SAP AI Core resource group will apply when "RESOURCE_GROUP" is not set.
+AICORE_AUTH_URL=https://***.authentication.***.hana.ondemand.com/oauth/token
+AICORE_CLIENT_ID=sb-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx!xxxxxxx|aicore!xxxx
+AICORE_CLIENT_SECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx$***
+AICORE_RESOURCE_GROUP=***
+AICORE_AI_API_URL=https://api.ai.***.hana.ondemand.com
+HANA_DB_HOST=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.***.***.hanacloud.ondemand.com
+HANA_DB_USER=***
+HANA_DB_PASSWORD=***
+HANA_DB_TABLE_NAME=***
+AWS_ACCESS_KEY_ID=***
+AWS_SECRET_ACCESS_KEY=***
+AWS_DEFAULT_REGION=***
+AWS_BUCKET=hcp-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+AWS_DOC_PATH_PREFIX=***

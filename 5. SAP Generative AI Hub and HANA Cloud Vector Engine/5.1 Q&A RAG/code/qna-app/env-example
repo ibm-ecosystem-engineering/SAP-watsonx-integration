@@ -1,0 +1,9 @@
+# Example .env file
+#   - The following environment variables are set with RAG pipleline deployment details.
+#   - The "default" SAP AI Core resource group will apply when "RESOURCE_GROUP" is not set.
+RESOURCE_GROUP=xxx
+CLIENT_ID=sb-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx!xxxxxxx|aicore!xxxx
+CLIENT_SECRET=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx$***
+AUTH_URL=https://***.authentication.***.hana.ondemand.com
+AI_API_URL=https://api.ai.***.hana.ondemand.com
+DEPLOYMENT_URL=https://api.ai.***.hana.ondemand.com/v2/inference/deployments/***
