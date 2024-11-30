@@ -4,7 +4,6 @@ import json
 import warnings
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
-from tqdm import tqdm
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import S3DirectoryLoader
 import boto3
