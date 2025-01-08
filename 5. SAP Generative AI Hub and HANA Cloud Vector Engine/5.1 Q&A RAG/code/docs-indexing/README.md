@@ -8,7 +8,6 @@ This guide demonstrates the process of indexing documents with SAP HANA Cloud Ve
 
 ### Key Components
 - **Documents for Indexing**: A collection of files (e.g., DOCX, PDF, HTML) to be indexed
-- **Cloud Object Storage (AWS S3)**: Stores documents prior to indexing
 - **Embedding Model**: Used for vectorizing documents (e.g., the ADDA model)
 - **HANA Database Instance**: Hosts the indexed data for efficient retrieval
 
