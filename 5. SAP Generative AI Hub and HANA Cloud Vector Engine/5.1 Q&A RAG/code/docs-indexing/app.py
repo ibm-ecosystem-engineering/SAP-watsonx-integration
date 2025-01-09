@@ -235,9 +235,22 @@ if __name__ == "__main__":
         )
         cursor = connection.cursor()
 
-        # Create table
+        # Hana db table name
         table_name = HANA_DB_CONFIG["TABLE_NAME"]
-        cursor.execute(f"DROP TABLE {table_name}")
+        print(f"Checking if table {table_name} is exist")
+        query = """
+        SELECT COUNT(*)
+        FROM M_TABLES
+        WHERE TABLE_NAME = ?
+        """
+        cursor.execute(query, (table_name.upper()))
+        result = cursor.fetchone()
+        is_exist = result[0]
+        if is_exist > 0:
+            print(f"table is already existed, deleting the table {table_name}")
+            cursor.execute(f"DROP TABLE {table_name}")
+
+        print(f"creating table {table_name}")
         cursor.execute(f"""
             CREATE COLUMN TABLE {table_name} (
                 ID BIGINT, 
@@ -275,8 +288,9 @@ if __name__ == "__main__":
         # Test vector search
         question = "Overview of the Granite Pre-Training Dataset?"
         results = run_vector_search(question, cursor, table_name)
+        print("#" * 100)
         print(f"Search results: {results}")
-
+        print("#" * 100)
     except Exception as e:
         print(f"Error: {e}")
 
