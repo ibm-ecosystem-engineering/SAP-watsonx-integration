@@ -46,9 +46,9 @@ class LLMService:
         self.hdb = hdb
 
     ## Querying Hana vectordb and building the context
-    def get_context(self, query: str, query_vector: str, metric='COSINE_SIMILARITY', k = 4) -> str:
-        context = self.hdb.run_vector_search(query, query_vector, 'COSINE_SIMILARITY', k)
-        context_text = ' '.join([doc[1] for doc in context])
+    def get_context(self, query_vector: str, metric='COSINE_SIMILARITY', k = 4) -> str:
+        context = self.hdb.run_vector_search(query_vector, 'COSINE_SIMILARITY', k)
+        context_text = ' '.join([doc[2] for doc in context])
         return context_text
 
     ## Sending request to aicore LLM
@@ -67,7 +67,7 @@ class LLMService:
 
     def generate(self, question: str, query_vector: str):
         # Getting the context by querying hana vector db
-        prompt_context = self.get_context(question,query_vector, k=1)
+        prompt_context = self.get_context(query_vector, k=1)
         # Sending the request to LLM
         f_1 = partial(self.send_request, prompt=prompt_1)
         response = f_1(context=prompt_context, query=question)
