@@ -265,6 +265,7 @@ if __name__ == "__main__":
         # Insert documents
         sql_insert = f"INSERT INTO {table_name} (ID, TITLE, PAGE_NUMBER, URL, TEXT, VECTOR_STR) VALUES (?,?,?,?,?,TO_REAL_VECTOR(?))"
         # Prepare documents for indexing
+        print("Generating embedding....")
         document_to_index = []
         for idx, doc in enumerate(split_docs):
             try:
