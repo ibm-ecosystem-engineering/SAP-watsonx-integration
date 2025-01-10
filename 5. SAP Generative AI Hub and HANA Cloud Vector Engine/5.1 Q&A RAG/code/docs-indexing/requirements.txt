@@ -8,3 +8,5 @@ hdbcli
 langchain-community
 generative-ai-hub-sdk
 python-dotenv
+tika
+pandas
